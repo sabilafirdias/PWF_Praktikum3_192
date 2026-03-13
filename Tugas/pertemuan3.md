@@ -1,0 +1,6 @@
+![ERD](<screenshot/erd.png>)
+![Model Kategori](<screenshot/modelkategori.png>)
+![Model Product](<screenshot/modelproduct.png>)
+![Migration Kategori](<screenshot/migrakategori.png>)
+![Migration Product](<screenshot/migraproduct.png>)
+![Database](<screenshot/database.png>)
