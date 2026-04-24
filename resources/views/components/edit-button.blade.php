@@ -1,11 +1,25 @@
-@props(['route'])
+@props([
+    'route' => '#',
+    'text' => 'Edit',
+    'size' => 'md'
+])
 
-<a href="{{ $route }}"
-    class="inline-flex items-center gap-1.5 px-3 py-2 text-sm font-medium rounded-lg border border-amber-300 dark:border-amber-600 text-amber-600 dark:text-amber-400 hover:bg-amber-50 dark:hover:bg-amber-900/20 transition">
-    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none"
-        viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-            d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+@php
+    $sizeClasses = [
+        'sm' => 'px-3 py-1.5 text-sm',
+        'md' => 'px-4 py-2 text-base',
+        'lg' => 'px-6 py-3 text-lg',
+    ][$size];
+@endphp
+
+<a 
+    href="{{ $route }}"
+    {{ $attributes->merge([
+        'class' => "inline-flex items-center gap-2 rounded-lg border-2 border-yellow-500 bg-transparent hover:bg-yellow-500/10 transition-all duration-200 {$sizeClasses}"
+    ]) }}
+>
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
     </svg>
-    {{ $slot->isEmpty() ? 'Edit' : $slot }}
+    <span class="text-yellow-500 font-semibold">{{ $text }}</span>
 </a>

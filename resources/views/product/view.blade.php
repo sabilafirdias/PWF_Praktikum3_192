@@ -33,7 +33,7 @@
                                 <x-delete-button :action="route('product.delete', $product->id)" />
                             @endcan
                         </div>
-                    </div>
+                    </div> {{-- ✅ Penutup header div --}}
 
                     {{-- Detail Card --}}
                     <div

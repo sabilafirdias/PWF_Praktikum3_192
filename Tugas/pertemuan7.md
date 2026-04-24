@@ -1,0 +1,1 @@
+![Component untuk tombol Edit dan Delete pada menu view](screenshot/tujuh.png)
